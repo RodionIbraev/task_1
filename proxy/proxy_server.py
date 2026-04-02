@@ -11,7 +11,7 @@ class ProxyServer:
                 await client_handler.handle_client(reader, writer)
 
         server = await asyncio.start_server(
-            limited_handle_client, host, port
+            limited_handle_client, host, port, reuse_address=True,
         )
 
         async with server:

@@ -1,10 +1,12 @@
-import yaml
 import asyncio
+from pathlib import Path
 
-with open("config.yaml", "r") as settings_file:
-    config = yaml.safe_load(settings_file)
+import yaml
 
-project_config = config
+CONFIG_PATH = Path(__file__).with_name("config.yaml")
+
+with CONFIG_PATH.open("r", encoding="utf-8") as settings_file:
+    project_config = yaml.safe_load(settings_file)
 
 
 class TimeoutPolicy:

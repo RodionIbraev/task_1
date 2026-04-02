@@ -1,11 +1,10 @@
 import asyncio
 
+from client_handler import ClientHandler
+from config import TimeoutPolicy, project_config
 from logger_config import setup_logger
-from config import project_config
 from proxy_server import ProxyServer
 from upstream_pool import UpstreamPool
-from config import TimeoutPolicy
-from client_handler import ClientHandler
 
 
 if __name__ == "__main__":

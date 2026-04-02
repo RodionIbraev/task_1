@@ -45,12 +45,16 @@ export const options = {
     http_req_duration: ['p(95)<800', 'p(99)<1500'],
     checks: ['rate>0.99'],
   },
+  noConnectionReuse: false,
+  noVUConnectionReuse: false,
+  userAgent: 'k6-proxy-test/1.0',
 };
 
 const defaultParams = {
   timeout: '35s',
   headers: {
     'Content-Type': 'application/x-www-form-urlencoded',
+    Connection: 'keep-alive',
   },
 };
 
